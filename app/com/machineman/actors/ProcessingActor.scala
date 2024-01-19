@@ -9,6 +9,7 @@ object ProcessingActor {
   def apply(entityId : String) : Behavior[DataBehavior] = Behaviors.receiveMessage {
     msg => msg match {
       case Data(msg,id) =>
+        println("new message")
         println(s"Message received by Processing actor $msg with entity ID $entityId")
         //        replyTo ! Replied
         Behaviors.same
